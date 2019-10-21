@@ -1,7 +1,7 @@
 'use strict';
 
 var imgArr = [
-    ['R2-D2 Bag', 'img/bag.jpg'],
+    ['Bag', 'img/bag.jpg'],
     ['Banana Cutter', 'img/banana.jpg'],
     ['Bathroom iPad Stand', 'img/bathroom.jpg'],
     ['Yellow Boots', 'img/boots.jpg'],
