@@ -15,15 +15,15 @@ BusMall.all = [];
 
 BusMall.container = document.getElementById('item-container');
 BusMall.leftImage = document.getElementById('leftimage');
-BusMall.middleImage = document.getElementById('middleimage');
+BusMall.centerimage = document.getElementById('centerimage');
 BusMall.rightImage = document.getElementById('rightimage');
 
 BusMall.leftTitle = document.getElementById('lefttitle');
-BusMall.middleTitle = document.getElementById('middletitle');
+BusMall.centerTitle = document.getElementById('centertitle');
 BusMall.rightTitle = document.getElementById('righttitle');
 
 BusMall.leftObject = null;
-BusMall.middleObject = null;
+BusMall.centerObject = null;
 BusMall.rightObject = null;
 
 new BusMall('bag', 'images/bag.jpg');
@@ -49,11 +49,11 @@ new BusMall('wine-glass', 'images/wine-glass.jpg');
 
 function renderBus() {
 
-    var forbidden = [BusMall.leftObject, BusMall.middleObject, BusMall.rightObject];
+    var forbidden = [BusMall.leftObject, BusMall.centerObject, BusMall.rightObject];
 
     do {
 
-        BusMall.leftObject = getRandomGoat();
+        BusMall.leftObject = getRandomitems();
 
     } while (forbidden.includes(BusMall.leftObject))
 
@@ -61,40 +61,40 @@ function renderBus() {
 
     do {
 
-        BusMall.middleObject = getRandomGoat();
+        BusMall.centerObject = getRandomitems();
 
-    } while (forbidden.includes(BusMall.middleObject))
+    } while (forbidden.includes(BusMall.centerObject))
 
-    forbidden.push(BusMall.middleObject);
+    forbidden.push(BusMall.centerObject);
     do {
 
-        BusMall.rightObject = getRandomGoat();
+        BusMall.rightObject = getRandomitems();
 
     } while (forbidden.includes(BusMall.rightObject));
 
 
 
     BusMall.leftObject.shownCtr++;
-    BusMall.middleObject.shownCtr++;
+    BusMall.centerObject.shownCtr++;
     BusMall.rightObject.shownCtr++;
 
     var leftImageElement = BusMall.leftImage;
-    var middleImageElement = BusMall.middleImage;
+    var centerimageElement = BusMall.centerimage;
     var rightBusMallImageElement = BusMall.rightImage;
 
     leftImageElement.setAttribute('src', BusMall.leftObject.src);
     leftImageElement.setAttribute('alt', BusMall.leftObject.title);
-    middleImageElement.setAttribute('src', BusMall.middleObject.src);
-    middleImageElement.setAttribute('alt', BusMall.middleObject.title);
+    centerimageElement.setAttribute('src', BusMall.centerObject.src);
+    centerimageElement.setAttribute('alt', BusMall.centerObject.title);
     rightBusMallImageElement.setAttribute('src', BusMall.rightObject.src);
     rightBusMallImageElement.setAttribute('alt', BusMall.rightObject.title);
 
     BusMall.leftTitle.textContent = BusMall.leftObject.title;
-    BusMall.middleTitle.textContent = BusMall.middleObject.title;
+    BusMall.centerTitle.textContent = BusMall.centerObject.title;
     BusMall.rightTitle.textContent = BusMall.rightObject.title;
 }
 
-function getRandomGoat() {
+function getRandomitems() {
     var index = Math.floor(Math.random() * BusMall.all.length);
     return BusMall.all[index];
 }
@@ -140,8 +140,8 @@ function clickItem(event) {
 
     if (clickedId === 'leftimage') {
         itemClicked = BusMall.leftObject;
-    } else if (clickedId === 'middleimage') {
-        itemClicked = BusMall.middleObject;
+    } else if (clickedId === 'centerimage') {
+        itemClicked = BusMall.centerObject;
     } else if (clickedId === 'rightimage') {
         itemClicked = BusMall.rightObject;
     } else {
