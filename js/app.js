@@ -118,8 +118,8 @@ function TotalItems() {
         var item = BusMall.all[i];
         var row = addElement('tr', tableBody);
         addElement('td', row, item.title);
-        addElement('td', row, '' + item.clickCtr + ' times');
-        addElement('td', row, '' + item.shownCtr + ' times');
+        addElement('td', row, '' + item.clickCtr);
+        addElement('td', row, '' + item.shownCtr);
 
     }
 }
