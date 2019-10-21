@@ -1,25 +1,65 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <title>lab11-Busmall-UsingChart</title>
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <h1>
+        <title>Bus-mall</title>
+    </h1>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Anton|Fascinate+Inline|Liu+Jian+Mao+Cao&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <h1>Click the image to vote for your favorite Items .</h1>
-    <section class="img-div" id="container">
-        <img class="image" id="left-pic">
-        <img class="image" id="center-pic">
-        <img class="image" id="right-pic">
-    </section>
+    <header>
 
-    <!-- <canvas id="chart" height="500px" width="1000px"></canvas> -->
-    <canvas id="chart"></canvas>
+    </header>
+    <main>
 
-    <script src="js/app.js"></script>
+        <h1> Lab11-Bus-Mall</h1>
+        <section id="item-container">
+
+            <div id="element">
+                <img id="leftimage" src="images/bag.jpg" alt="bag">
+                <h2 id="lefttitle">Title here</h2>
+            </div>
+            <div id="element">
+                <img id="centerimage" src="images/banana.jpg" alt="banana">
+                <h2 id="centertitle">Banana</h2>
+            </div>
+            <div id="element">
+                <img id="rightimage" src="images/chair.jpg" alt="chair">
+                <h2 id="righttitle">Chair</h2>
+            </div>
+
+            <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Vote</th>
+                            <th>Shown</th>
+                            <th>Result</th>
+
+
+                        </tr>
+                    </thead>
+                    <tbody id="content-area">
+                    </tbody>
+                    <tfoot>
+                    </tfoot>
+                </table>
+            </div>
+        </section>
+
+    </main>
+    <footer>
+
+    </footer>
+    <canvas id="Chart"></canvas>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="/js/app.js"></script>
 </body>
 
 </html>

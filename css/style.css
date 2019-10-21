@@ -1,71 +1,51 @@
-                            * {
-                                font-family: Georgia, 'Times New Roman', Times, serif;
-                            }
-                            
-                            body {
-                                background-color: radial-gradient(blue gray);
-                            }
-                            
-                            h1 {
-                                height: 100px;
-                                display: flex;
-                                flex-direction: column;
-                                justify-content: center;
-                                text-align: center;
-                                color: darkblue;
-                            }
-                            
-                            .img-div {
-                                margin-left: auto;
-                                margin-right: auto;
-                                text-align: center;
-                            }
-                            
-                            section.img-div img {
-                                display: inline-block;
-                                float: none;
-                                width: auto;
-                                height: auto;
-                                border: 1px solid black;
-                                max-width: 300px;
-                                max-height: 300px;
-                                width: auto;
-                                height: auto;
-                            }
-                            
-                            .image:hover {
-                                box-shadow: 0 0 15px rgb(255, 255, 0);
-                            }
-                            /* table styling */
-                            
-                            ul {
-                                padding-top: 30px;
-                                padding-bottom: 30px;
-                                list-style: none;
-                                width: 50%;
-                                margin: auto;
-                            }
-                            
-                            ul li {
-                                background-color: white;
-                                padding: 5px;
-                                text-align: center;
-                                border: 1px solid #000;
-                            }
-                            
-                            ul li:first-child {
-                                font-style: oblique;
-                                font-size: 30px;
-                                background-color: lightgray;
-                                color: white;
-                            }
-                            
-                            li:nth-child(odd) {
-                                background: lightgray;
-                            }
-                            /* Canvas styling */
-                            
-                            canvas {
-                                width: 75%;
-                                height: 250px;
-                            }
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: radial-gradient(#3498db, beige) fixed;
+    text-align: center;
+    font-family: 'Liu Jian Mao Cao', cursive;
+    font-family: 'Fascinate Inline', cursive;
+    font-family: 'Anton', sans-serif;
+    font-size: 75%;
+}
+
+section div {
+    width: 25%;
+    float: left;
+    padding: 10px;
+}
+
+section div img {
+    max-width: 250px;
+    height: 250px;
+    border: 5px solid #4b4075;
+    cursor: pointer;
+    transition: 0.8s;
+}
+
+table {
+    border-collapse: collapse;
+    font-size: 80%;
+    color: black;
+}
+
+h1 {
+    color: #0f0570;
+    transition: 0.8s;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+    padding: 3px 10px;
+    font-size: 110%;
+}
+
+#element {
+    display: block;
+    margin: auto;
+    padding-top: 220px;
+}
