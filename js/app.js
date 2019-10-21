@@ -120,8 +120,11 @@ function TotalItems() {
         addElement('td', row, item.title);
         addElement('td', row, '' + item.clickCtr);
         addElement('td', row, '' + item.shownCtr);
+        addElement('td', row, '' + ' had ' + item.clickCtr + ' votes ' + ' and was shown ' + item.shownCtr);
+
 
     }
+
 }
 
 function addElement(tag, container, text) {
@@ -166,6 +169,7 @@ function clickItem(event) {
         }
     }
 }
+
 
 // Notice that we're attaching event listener to the container, 
 // but event.target will allow us to which child element was actually clicked
