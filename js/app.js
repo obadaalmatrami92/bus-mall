@@ -109,6 +109,7 @@ function handleClick(event) {
         document.getElementById('container').removeEventListener('click', handleClick);
         showTableResults();
 
+
         // reset the local storage
         localStorage.setItem('Counter', JSON.stringify(storedCounter));
         for (var i = 0; i < storedImgArr.length; i++) {
@@ -149,7 +150,7 @@ function showTableResults() {
     }
 
     var myChart = new Chart(ctx, {
-        type: 'horizontalBar',
+        type: 'bar',
         data: {
             labels: allNames,
             datasets: [{
