@@ -47,6 +47,10 @@ new BusMall('Usb', 'images/usb.gif');
 new BusMall('Water-can', 'images/water-can.jpg');
 new BusMall('Wine-glass', 'images/wine-glass.jpg');
 
+
+
+
+
 function renderBus() {
 
     var forbidden = [BusMall.leftObject, BusMall.centerObject, BusMall.rightObject];
@@ -94,14 +98,16 @@ function renderBus() {
     BusMall.rightTitle.textContent = BusMall.rightObject.title;
 }
 
+
+
 function getRandomitems() {
     var index = Math.floor(Math.random() * BusMall.all.length);
     return BusMall.all[index];
 }
 
-// not using this, just showing the better way vs. ceil
+
 function randomInRange(min, max) {
-    var range = max - min + 1; // add one since we will be flooring
+    var range = max - min + 1;
     var rand = Math.floor(Math.random() * range) + min
     return rand;
 }
@@ -117,25 +123,6 @@ function rendernewul() {
     }
 }
 
-// function TotalItems() {
-
-//     var tableBody = document.getElementById('content-area');
-
-
-//     tableBody.innerHTML = '';
-
-
-//     for (var i = 0; i < BusMall.all.length; i++) {
-//         var item = BusMall.all[i];
-//         var row = addElement('tr', tableBody);
-//         addElement('td', row, item.title);
-//         addElement('td', row, '' + item.clickCtr);
-//         addElement('td', row, '' + item.shownCtr);
-
-
-//     }
-
-// }
 
 function addElement(tag, container, text) {
     var element = document.createElement(tag);
@@ -146,11 +133,28 @@ function addElement(tag, container, text) {
     return element;
 }
 
+function getbusmall() {
+    var data = localStorage.getItem('productsitem');
+    var busmalldata = JSON.parse(data);
+    if (busmalldata) {
+
+        BusMall.all = busmalldata;
+    }
+
+}
+
+
+function setbusmall() {
+    var BusString = JSON.stringify(BusMall.all)
+    localStorage.setItem('productsitem', BusString)
+}
+
+
 function clickItem(event) {
 
     var clickedId = event.target.id;
     var itemClicked;
-
+    setbusmall();
     if (clickedId === 'leftimage') {
         itemClicked = BusMall.leftObject;
     } else if (clickedId === 'centerimage') {
@@ -165,12 +169,8 @@ function clickItem(event) {
         itemClicked.clickCtr++;
         BusMall.roundCtr++;
 
-        // TotalItems();
-
         if (BusMall.roundCtr === BusMall.roundLimit) {
             rendernewul();
-            rendermallitems();
-
 
             alert('No more clicking for you!');
 
@@ -179,6 +179,7 @@ function clickItem(event) {
         } else {
 
             renderBus();
+            // setbusmall();
         }
     }
 }
@@ -197,6 +198,8 @@ function rendermallitems() {
         ClickedArray.push(MallInstenc.clickCtr);
         shownArray.push(MallInstenc.shownCtr);
     }
+
+
     var ctx = document.getElementById('Chart').getContext('2d');
     var chart = new Chart(ctx, {
         type: 'bar',
@@ -222,11 +225,7 @@ function rendermallitems() {
     });
 }
 
-
-
-
-
 BusMall.container.addEventListener('click', clickItem);
 
-// Totalsproducts();
 renderBus();
+getbusmall();

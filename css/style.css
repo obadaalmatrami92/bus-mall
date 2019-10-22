@@ -12,12 +12,18 @@ body {
 
 #content-ul {
     font-size: 17.3px;
+    display: block;
+    margin: auto;
+    padding-top: -100px;
+    padding-left: 400px;
 }
 
 section div {
-    width: 25%;
+    /* width: 33.33%; */
+    display: inline;
+    padding: 80px;
     float: left;
-    padding: 10px;
+    padding-bottom: -20px;
 }
 
 section div img {
@@ -40,17 +46,8 @@ h1 {
     transition: 0.8s;
 }
 
-
-/* table,
-th,
-td {
-    border: 1px solid black;
-    padding: 3px 10px;
-    font-size: 110%;
-} */
-
 #element {
     display: block;
     margin: auto;
-    padding-top: 220px;
+    /* padding-top: 220px; */
 }
