@@ -8,7 +8,10 @@ body {
     font-family: 'Liu Jian Mao Cao', cursive;
     font-family: 'Fascinate Inline', cursive;
     font-family: 'Anton', sans-serif;
-    font-size: 75%;
+}
+
+#content-ul {
+    font-size: 17.3px;
 }
 
 section div {
@@ -25,24 +28,26 @@ section div img {
     transition: 0.8s;
 }
 
-table {
+
+/* table {
     border-collapse: collapse;
     font-size: 80%;
     color: black;
-}
+} */
 
 h1 {
     color: #0f0570;
     transition: 0.8s;
 }
 
-table,
+
+/* table,
 th,
 td {
     border: 1px solid black;
     padding: 3px 10px;
     font-size: 110%;
-}
+} */
 
 #element {
     display: block;

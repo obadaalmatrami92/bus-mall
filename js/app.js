@@ -168,9 +168,12 @@ function clickItem(event) {
         // TotalItems();
 
         if (BusMall.roundCtr === BusMall.roundLimit) {
+            rendernewul();
+            rendermallitems();
+
 
             alert('No more clicking for you!');
-            rendernewul();
+
             BusMall.container.removeEventListener('click', clickItem);
 
         } else {
@@ -182,11 +185,6 @@ function clickItem(event) {
 
 
 
-BusMall.container.addEventListener('click', clickItem);
-
-// TotalItems();
-
-renderBus();
 
 function rendermallitems() {
     var MallArray = [];
@@ -201,7 +199,7 @@ function rendermallitems() {
     }
     var ctx = document.getElementById('Chart').getContext('2d');
     var chart = new Chart(ctx, {
-        type: 'horizontalBar',
+        type: 'bar',
         data: {
             labels: ['bag', 'banana', 'bathroom', 'boots', 'breakfast', 'bubblegum', 'chair', 'cthulhu', 'dog-duck ',
                 'dragon', 'pen', 'pet-sweep', 'scissors', 'shark', 'sweep', 'tauntaun', 'unicorn', 'usb', 'water-can', 'wine-glass'
@@ -230,6 +228,5 @@ function rendermallitems() {
 
 BusMall.container.addEventListener('click', clickItem);
 
-Totalsproducts();
+// Totalsproducts();
 renderBus();
-rendermallitems();
