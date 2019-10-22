@@ -26,26 +26,26 @@ BusMall.leftObject = null;
 BusMall.centerObject = null;
 BusMall.rightObject = null;
 
-new BusMall('bag', 'images/bag.jpg');
-new BusMall('banana', 'images/banana.jpg');
-new BusMall('bathroom', 'images/bathroom.jpg');
-new BusMall('boots', 'images/boots.jpg');
-new BusMall('breakfast', 'images/breakfast.jpg');
-new BusMall('bubblegum', 'images/bubblegum.jpg');
-new BusMall('chair', 'images/chair.jpg');
-new BusMall('cthulhu', 'images/cthulhu.jpg');
-new BusMall('dog-duck', 'images/dog-duck.jpg');
-new BusMall('dragon', 'images/dragon.jpg');
-new BusMall('pen', 'images/pen.jpg');
-new BusMall('pet-sweep', 'images/pet-sweep.jpg');
-new BusMall('scissors', 'images/scissors.jpg');
-new BusMall('shark', 'images/shark.jpg');
-new BusMall('sweep', 'images/sweep.png');
-new BusMall('tauntaun', 'images/tauntaun.jpg');
-new BusMall('unicorn', 'images/unicorn.jpg');
-new BusMall('usb', 'images/usb.gif');
-new BusMall('water-can', 'images/water-can.jpg');
-new BusMall('wine-glass', 'images/wine-glass.jpg');
+new BusMall('Bag', 'images/bag.jpg');
+new BusMall('Banana', 'images/banana.jpg');
+new BusMall('Bathroom', 'images/bathroom.jpg');
+new BusMall('Boots', 'images/boots.jpg');
+new BusMall('Breakfast', 'images/breakfast.jpg');
+new BusMall('Bubblegum', 'images/bubblegum.jpg');
+new BusMall('Chair', 'images/chair.jpg');
+new BusMall('Cthulhu', 'images/cthulhu.jpg');
+new BusMall('Dog-duck', 'images/dog-duck.jpg');
+new BusMall('Dragon', 'images/dragon.jpg');
+new BusMall('Pen', 'images/pen.jpg');
+new BusMall('Pet-sweep', 'images/pet-sweep.jpg');
+new BusMall('Scissors', 'images/scissors.jpg');
+new BusMall('Shark', 'images/shark.jpg');
+new BusMall('Sweep', 'images/sweep.png');
+new BusMall('Tauntaun', 'images/tauntaun.jpg');
+new BusMall('Unicorn', 'images/unicorn.jpg');
+new BusMall('Usb', 'images/usb.gif');
+new BusMall('Water-can', 'images/water-can.jpg');
+new BusMall('Wine-glass', 'images/wine-glass.jpg');
 
 function renderBus() {
 
@@ -106,26 +106,36 @@ function randomInRange(min, max) {
     return rand;
 }
 
-function Totalsproducts() {
 
-    var tableBody = document.getElementById('content-area');
-
-
-    tableBody.innerHTML = '';
-
-
+function rendernewul() {
+    var contentul = document.getElementById('content-ul')
     for (var i = 0; i < BusMall.all.length; i++) {
-        var item = BusMall.all[i];
-        var row = addElement('tr', tableBody);
-        addElement('td', row, item.title);
-        addElement('td', row, '' + item.clickCtr);
-        addElement('td', row, '' + item.shownCtr);
-        addElement('td', row, '' + ' had ' + item.clickCtr + ' votes ' + ' and was shown ' + item.shownCtr);
-
+        var currentul = BusMall.all[i];
+        var state = currentul.title + ' had ' + currentul.clickCtr + ' votes ' + ' and was shown ' + currentul.shownCtr;
+        addElement('li', contentul, state);
 
     }
-
 }
+
+// function TotalItems() {
+
+//     var tableBody = document.getElementById('content-area');
+
+
+//     tableBody.innerHTML = '';
+
+
+//     for (var i = 0; i < BusMall.all.length; i++) {
+//         var item = BusMall.all[i];
+//         var row = addElement('tr', tableBody);
+//         addElement('td', row, item.title);
+//         addElement('td', row, '' + item.clickCtr);
+//         addElement('td', row, '' + item.shownCtr);
+
+
+//     }
+
+// }
 
 function addElement(tag, container, text) {
     var element = document.createElement(tag);
@@ -155,12 +165,12 @@ function clickItem(event) {
         itemClicked.clickCtr++;
         BusMall.roundCtr++;
 
-        Totalsproducts();
+        // TotalItems();
 
         if (BusMall.roundCtr === BusMall.roundLimit) {
-            rendermallitems();
-            alert('No more clicking for you!');
 
+            alert('No more clicking for you!');
+            rendernewul();
             BusMall.container.removeEventListener('click', clickItem);
 
         } else {
@@ -169,6 +179,14 @@ function clickItem(event) {
         }
     }
 }
+
+
+
+BusMall.container.addEventListener('click', clickItem);
+
+// TotalItems();
+
+renderBus();
 
 function rendermallitems() {
     var MallArray = [];
