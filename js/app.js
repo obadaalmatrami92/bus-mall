@@ -171,7 +171,7 @@ function clickItem(event) {
 
         if (BusMall.roundCtr === BusMall.roundLimit) {
             rendernewul();
-
+            rendermallitems();
             alert('No more clicking for you!');
 
             BusMall.container.removeEventListener('click', clickItem);
