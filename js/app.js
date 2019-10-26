@@ -179,13 +179,9 @@ function clickItem(event) {
         } else {
 
             renderBus();
-            // setbusmall();
         }
     }
 }
-
-
-
 
 function rendermallitems() {
     var MallArray = [];
@@ -209,13 +205,13 @@ function rendermallitems() {
             ],
             datasets: [{
                     label: 'Item Vote',
-                    backgroundColor: 'Blue',
+                    backgroundColor: 'orange',
                     borderColor: 'black',
                     data: ClickedArray,
                 },
                 {
                     label: 'Item Shown',
-                    backgroundColor: 'red',
+                    backgroundColor: 'blue',
                     borderColor: 'black',
                     data: shownArray,
                 }

@@ -19,7 +19,6 @@ body {
 }
 
 section div {
-    /* width: 33.33%; */
     display: inline;
     padding: 80px;
     float: left;
@@ -34,13 +33,6 @@ section div img {
     transition: 0.8s;
 }
 
-
-/* table {
-    border-collapse: collapse;
-    font-size: 80%;
-    color: black;
-} */
-
 h1 {
     color: #0f0570;
     transition: 0.8s;
@@ -49,5 +41,4 @@ h1 {
 #element {
     display: block;
     margin: auto;
-    /* padding-top: 220px; */
 }
