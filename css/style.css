@@ -12,6 +12,7 @@ body {
 
 #content-ul {
     font-size: 17.3px;
+    list-style: upper-roman;
 }
 
 section div {
