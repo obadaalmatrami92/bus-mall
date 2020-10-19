@@ -162,7 +162,7 @@ function clickItem(event) {
     } else if (clickedId === 'rightimage') {
         itemClicked = BusMall.rightObject;
     } else {
-        console.log('Um, what was clicked on???', clickedId);
+        alert('Ohh No, what was clicked on Make sure to click on one of the PICTURES???', clickedId);  
     }
 
     if (itemClicked) {
